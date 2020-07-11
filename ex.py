@@ -19,8 +19,13 @@ class Car():
     def __str__(self):
         return f"Car with {self.wheels} wheels!"
 
+
 # Extended Class
 class Convertible(Car): 
+    # 상속하여 메소드 재정의 시 대체됨
+    def __init__(self, **kwargs):
+        super().__init__(kwargs) # 부모의 init 호출
+        self.time = kwargs.get("time", 10)
     def take_off(self):
         return "taking off"
 
